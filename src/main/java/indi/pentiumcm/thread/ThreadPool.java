@@ -95,15 +95,7 @@ public class ThreadPool {
 
 
     public static void main(String[] args) {
-
-//        thread2callable();
-
-        threadPoolTest();
-        System.out.println("主线程");
-
-//        threadPoolTest();
-
-
+        threadPoolExecutor.submit(new TaskRunnable());
     }
 
 }

@@ -17,10 +17,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--        <maven.compiler.source>1.7</maven.compiler.source>-->
         <!--        <maven.compiler.target>1.7</maven.compiler.target>-->
+
+        <fastjson.version>1.2.75</fastjson.version>
     </properties>
 
     <dependencies>
-        <!--        jsqlparser解析SQL工具类-->
+        <!--  jsqlparser解析SQL工具类  -->
         <dependency>
             <groupId>com.github.jsqlparser</groupId>
             <artifactId>jsqlparser</artifactId>
@@ -28,7 +30,7 @@
         </dependency>
 
 
-        <!--        antlr-->
+        <!--  antlr  -->
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4</artifactId>
@@ -42,7 +44,7 @@
             <version>4.8-1</version>
         </dependency>
 
-        <!--POI-->
+        <!--  POI  -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -54,7 +56,7 @@
             <version>3.15</version>
         </dependency>
 
-        <!--JSON-->
+        <!--  JSON  -->
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
@@ -62,6 +64,12 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20201115</version>
+        </dependency>
 
         <!-- httpclient -->
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
@@ -85,6 +93,63 @@
             <artifactId>jna</artifactId>
             <version>5.5.0</version>
         </dependency>
+
+
+        <!--    IPC    -->
+        <!-- https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture-driver-ipcam -->
+        <dependency>
+            <groupId>com.github.sarxos</groupId>
+            <artifactId>webcam-capture-driver-ipcam</artifactId>
+            <version>0.3.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv-platform</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.60</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.6</version>
+        </dependency>
+
+        <!--加载hutool-->
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.5</version>
+        </dependency>
+
 
 
         <dependency>

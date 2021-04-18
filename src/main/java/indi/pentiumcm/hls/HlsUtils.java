@@ -118,8 +118,7 @@ public class HlsUtils {
 
 
     public static void main(String[] args) {
-        String indexPath = "https://hls-dss-cn01.bcloud365.net:8188/hls/YWNiZTQxOWI0NnwxYmMwNjAwZjIzODIzZGE3fGV5SjFJam9pWVdSdGFXNGlMQ0p3SWpvaW3RHeEtkM0JpYnpZaWZRPT18MTYxNTMwMTMxNjM5M3xkc3N8MTE5LjMuNjIuMTA5fG1kNQ%3D%3D.4f26aa2d0193ee43bf2cf4cd214d1d58/1bc0600f23823da7/1.m3u8";
-
+        String indexPath = "https://hls-dss-cn01.bcloud365.net:8188/hls/YWNiZTQxOWI0NnwxYmMwNjAwZjIzODIzZGE3fGV5SjFJam9pWVdSdGFXNGlMQ0p3SWpvaW2RHeEtkM0JpYnpZaWZRPT18MTYxNTM0ODEyMDEyMnxkc3N8MTE5LjMuNjIuMTA5fG1kNQ%3D%3D.038bb247102675c3c98f6c55819dbf5e/1bc0600f23823da7/1.m3u8";
         String prePath = indexPath.substring(0,indexPath.lastIndexOf("/")+1);
         System.out.println(prePath);
 
