@@ -1,4 +1,4 @@
-package indi.pentiumcm.hls;
+package indi.pentiumcm.rtsp;
 
 import com.github.sarxos.webcam.Webcam;
 
@@ -61,7 +61,7 @@ public class TestCam {
 
     public static void main(String[] args) throws IOException {
 
-        String file = "rtsp://admin:admin@192.168.1.218/1";
+        String file = "rtsp://admin:admin@192.168.1.106/1";
         FFmpegFrameGrabber grabber = FFmpegFrameGrabber.createDefault(file);
         grabber.setOption("rtsp_transport", "tcp"); // 使用tcp的方式，不然会丢包很严重
         grabber.setImageWidth(960);
