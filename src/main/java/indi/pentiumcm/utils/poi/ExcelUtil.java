@@ -16,6 +16,8 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.jeecgframework.poi.excel.ExcelImportUtil;
+import org.jeecgframework.poi.excel.entity.ImportParams;
 
 
 /**
@@ -25,12 +27,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author： pentiumCM
  * @email： 842679178@qq.com
  * @date: 2020/7/27 20:49
- * @describe:
+ * @describe: poi工具类
  */
 
 
 public class ExcelUtil {
 
+    /**
+     * excel导出
+     *
+     * @param name
+     * @param ja
+     * @param tbName
+     */
     public static void exportExcel(String name, JSONArray ja, String tbName) {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet(name);
@@ -77,22 +86,44 @@ public class ExcelUtil {
     }
 
 
-    public static void main(String[] args) {
-        String jaStr = "";
+    public static void importExcel() {
+        ImportParams params = new ImportParams();
+        // 表格标题所在行，计数从0开始
+        params.setTitleRows(0);
+        // head头部所在行，计数从0开始
+        params.setHeadRows(0);
 
-        JSONArray jsonArray = JSONArray.fromObject(jaStr);
+        // 表格sheet数量
+        // params.setSheetNum(9);
 
-        JSONArray newJsons = new JSONArray();
-        for (int i = 0; i < jsonArray.size(); i++) {
-            JSONObject json = (JSONObject) jsonArray.get(i);
+        params.setNeedSave(true);
 
-            if (json.get("f_vc_shijlx").equals("10")) {
-                newJsons.add(json);
-            }
-            System.out.println("hello");
-        }
-
-        ExcelUtil.exportExcel("data_7", newJsons, "data7");
-
+        List<ExcelEntity> list = ExcelImportUtil.importExcel(new File(
+                "D:/test.xlsx"), ExcelEntity.class, params);
+        System.out.println("");
     }
+
+    public static void main(String[] args) {
+        importExcel();
+    }
+
+
+//    public static void main(String[] args) {
+//        String jaStr = "";
+//
+//        JSONArray jsonArray = JSONArray.fromObject(jaStr);
+//
+//        JSONArray newJsons = new JSONArray();
+//        for (int i = 0; i < jsonArray.size(); i++) {
+//            JSONObject json = (JSONObject) jsonArray.get(i);
+//
+//            if (json.get("f_vc_shijlx").equals("10")) {
+//                newJsons.add(json);
+//            }
+//            System.out.println("hello");
+//        }
+//
+//        ExcelUtil.exportExcel("data_7", newJsons, "data7");
+//
+//    }
 }

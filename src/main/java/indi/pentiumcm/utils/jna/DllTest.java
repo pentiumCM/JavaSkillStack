@@ -26,7 +26,7 @@ public class DllTest {
     public interface CLibrary extends Library {
         // DLL文件默认路径为项目根目录，若DLL文件存放在项目外，请使用绝对路径。（此处：(Platform.isWindows()?"msvcrt":"c")指本地动态库msvcrt.dll）
 //        CLibrary INSTANCE = (CLibrary) Native.loadLibrary((Platform.isWindows() ? "msvcrt" : "c"), CLibrary.class);
-        CLibrary INSTANCE = (CLibrary) Native.load("src/main/java/indi/pentiumcm/utils/jna/msvcrt.dll", CLibrary.class);
+        CLibrary INSTANCE = (CLibrary) Native.loadLibrary("src/main/java/indi/pentiumcm/utils/jna/msvcrt.dll", CLibrary.class);
 
         // 声明将要调用的DLL中的方法,可以是多个方法(此处示例调用本地动态库msvcrt.dll中的printf()方法)
         void printf(String format, Object... args);
@@ -53,7 +53,7 @@ public class DllTest {
         // DLL文件默认路径为项目根目录，若DLL文件存放在项目外，请使用绝对路径。（此处：(Platform.isWindows()?"msvcrt":"c")指本地动态库msvcrt.dll）
         // CLibrary INSTANCE = (CLibrary) Native.loadLibrary((Platform.isWindows() ? "msvcrt" : "c"), CLibrary.class);
 //        CLibrary INSTANCE = (CLibrary) Native.loadLibrary("F:\\develop_code\\app\\android\\Stock\\app\\src\\main\\java\\indi\\pentiumcm\\stock\\dll\\Util.dll", CLibrary.class);
-        C_Util INSTANCE = (C_Util) Native.load("src/main/java/indi/pentiumcm/utils/jna/Util.dll", C_Util.class);
+        C_Util INSTANCE = (C_Util) Native.loadLibrary("src/main/java/indi/pentiumcm/utils/jna/Util.dll", C_Util.class);
 
         // 声明将要调用的DLL中的方法,可以是多个方法(此处示例调用本地动态库msvcrt.dll中的printf()方法)
         String Getsnr(String fcode, String fd, String ean, String sn);
@@ -68,7 +68,7 @@ public class DllTest {
      */
     public interface dllTest extends Library {
         // DLL文件默认路径为项目根目录，若DLL文件存放在项目外，请使用绝对路径。（此处：(Platform.isWindows()?"msvcrt":"c")指本地动态库msvcrt.dll）
-        dllTest INSTANCE = (dllTest) Native.load("src/main/java/indi/pentiumcm/utils/jna/DllTest.dll", dllTest.class);
+        dllTest INSTANCE = (dllTest) Native.loadLibrary("src/main/java/indi/pentiumcm/utils/jna/DllTest.dll", dllTest.class);
 
         // 声明将要调用的DLL中的方法,可以是多个方法(此处示例调用本地动态库msvcrt.dll中的printf()方法)
         public void ShowMessage(String text);

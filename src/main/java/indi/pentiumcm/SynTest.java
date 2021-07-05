@@ -1,9 +1,14 @@
 package indi.pentiumcm;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
+/**
+ * 获取项目根路径的方法
+ */
 
 /**
  * @projName: JavaSkillStack
@@ -16,44 +21,42 @@ import java.util.regex.Pattern;
  */
 public class SynTest {
 
-    /**
-     * 判断字符串是否为URL
-     *
-     * @param urls 用户头像key
-     * @return true:是URL、false:不是URL
-     */
-    public static boolean isHttpUrl(String urls) {
-        boolean isurl = false;
-      /*  String regex = "(((https|http)?://)?([a-z0-9]+[.])|(www.))"
-                + "\\w+[.|\\/]([a-z0-9]{0,})?[[.]([a-z0-9]{0,})]+((/[\\S&&[^,;\u4E00-\u9FA5]]+)+)?([.][a-z0-9]{0,}+|/?)";//设置正则表达式
-*/
-        String regex = "(((https|http)?://)?([a-z0-9]+[.])|(www.))";//设置正则表达式
 
-        Pattern pat = Pattern.compile(regex.trim());//比对
-        Matcher mat = pat.matcher(urls.trim());
-        isurl = mat.matches();//判断是否匹配
-        if (isurl) {
-            isurl = true;
+    public static void stop(Timer timer) {
+
+        System.out.println("停止定时器！");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        return isurl;
+        timer.cancel();
     }
 
     public static void main(String[] args) {
-/*        String content = "https://192.168";
-
-        String pattern = "http://.*|https://.*";
-
-        boolean isMatch = Pattern.matches(pattern, content);
-        System.out.println("字符串中是否包含了 'http' 子字符串? " + isMatch);*/
 
 
-        String str = "外部单据ID1";
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
 
-        boolean isContain = str.contains("外部单据ID1");
+                System.out.println("11232");
+            }
+        }, 2000, 1000);
 
-        System.out.println(isContain);
+        stop(timer);
+
+
 
     }
 
 
 }
+
+
+
+
+
+
+
+
